@@ -1,0 +1,7 @@
+- name: TEst the connectivity into vyos
+  hosts: vyos
+  gather_facts: false
+  tasks:
+    - name: Try to connect into devices
+      vyos.vyos.vyos_facts:
+        gather_subset: all

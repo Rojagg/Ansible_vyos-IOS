@@ -1,0 +1,21 @@
+---
+cisco:
+  hosts:
+    cisco02:
+      ansible_host: 192.168.0.162
+
+    cisco04:
+      ansible_host: 192.168.0.164
+
+vyos:
+  hosts:
+    vyos01:
+      ansible_host: 192.168.0.161
+
+    vyos03:
+      ansible_host: 192.168.0.163
+
+routers:
+  children:
+    vyos:
+    cisco:

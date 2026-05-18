@@ -1,0 +1,3 @@
+#Ignore SSH keys - used for the accessing the devices
+
+.ssh/*

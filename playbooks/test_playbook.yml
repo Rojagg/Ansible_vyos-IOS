@@ -1,0 +1,11 @@
+---
+- name: Test the connection to the cisco
+  hosts: cisco
+  gather_facts: false
+
+  tasks:
+    - name: TRy to connect to the device
+      cisco.ios.ios_facts:
+        gather_subset: min
+
+
