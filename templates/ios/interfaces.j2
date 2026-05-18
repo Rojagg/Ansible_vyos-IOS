@@ -1,7 +1,7 @@
 {% for interface in interfaces  %}
 interface {{interface.name}}
  ip address {{interface.ipv4}} {{interface.mask}}
-{% if interface.enable == "true" %}
+{% if interface.enable == true %}
  no shutdown
 {% else %}
  shutdown

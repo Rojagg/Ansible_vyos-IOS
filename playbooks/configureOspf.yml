@@ -1,0 +1,14 @@
+---
+- name: Configure OSPF on the routers
+  hosts: routers
+
+  tasks:
+    - name: Configure OSPF - IOS
+      cisco.ios.ios_config:
+        src: "{{playbook_dir}}/../templates/ios/ospf.j2"
+      when: ansible_network_os == "cisco.ios.ios"
+
+    - name: Configurre OSPF - vyos
+      vyos.vyos.vyos_config:
+        src: "{{playbook_dir}}/../templates/vyos/ospf.j2"
+      when: ansible_network_os == "vyos.vyos.vyos"
