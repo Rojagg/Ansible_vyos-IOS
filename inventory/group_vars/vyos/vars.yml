@@ -1,1 +1,11 @@
 ansible_network_os: vyos.vyos.vyos
+
+
+
+#######################################
+##
+#  VYOS commands
+##
+######################################
+
+show_interfaces: show interfaces detail

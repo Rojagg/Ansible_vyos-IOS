@@ -1,2 +1,30 @@
 ansible_user: vyos01
 ansible_ssh_private_key_file: "{{ playbook_dir}}/../.ssh/vyos"
+
+interfaces:
+  ethernet:
+    - name: eth0
+      ipv4: 10.0.12.1
+      mask: 24
+      enable: false
+
+    - name: eth1
+      ipv4: 10.0.13.2
+      mask: 24
+      enable: true
+
+  Loopback:
+    - ipv4: 10.0.0.2
+      mask: 32
+    
+
+ospf:
+  process_id: 1
+  networks:
+    - prefix: 10.0.12.2
+      wildcard: 0.0.0.0
+      area: 0
+
+    - prefix: 10.0.24.1
+      wildcard: 0.0.0.0
+      area: 0

@@ -1,0 +1,24 @@
+- name:  Output the interface param
+  hosts: routers
+  gather_facts: false
+
+  tasks:
+    - name: Check if the destination file exists
+      file:
+        path: "{{ playbook_dir }}/../output/interfaces/"
+        state: directory
+        mode: "0755"
+
+    - name: Obtain the interface parameters
+      ansible.netcommon.cli_command:
+        command: "{{show_interfaces}}"
+      register: output_interface_param
+
+    - name: Display the obtained information
+      debug:
+        var: output_interface_param["stdout_lines"]
+
+    - name: Copy the configs into the file
+      copy:
+        content: "{{output_interface_param.stdout_lines}}"
+        dest: "{{ playbook_dir }}/../output/interfaces/{{inventory_hostname}}_interfaces"

@@ -1,1 +1,29 @@
 ansible_user: cisco02
+
+interfaces:
+  - name: GigabitEthernet0/1
+    ipv4: 10.0.12.2
+    mask: 255.255.255.0
+    enable: false
+
+  - name: GigabitEthernet0/0
+    ipv4: 10.0.24.1
+    mask: 255.255.255.0
+    enable: true
+
+  - name: Loopback0
+    ipv4: 10.0.0.2
+    mask: 255.255.255.255
+    enable: true
+
+ospf:
+  process_id: 1
+  networks:
+    - prefix: 10.0.12.2
+      wildcard: 0.0.0.0
+      area: 0
+
+    - prefix: 10.0.24.1
+      wildcard: 0.0.0.0
+      area: 0
+

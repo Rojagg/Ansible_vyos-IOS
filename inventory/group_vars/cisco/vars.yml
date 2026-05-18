@@ -1,1 +1,10 @@
 ansible_network_os: cisco.ios.ios
+
+
+#######################################
+#
+# Commands IOS
+#
+######################################
+
+show_interfaces: "show interfaces"

@@ -1,0 +1,14 @@
+---
+- name: Configuration of the interfaces
+  hosts: all
+
+  tasks:
+    - name: Configure interfaces using J2 template
+      cisco.ios.ios_config:
+        src: "{{playbook_dir}}/../templates/ios/interfaces.j2"
+      when: ansible_network_os == "cisco.ios.ios"
+
+    - name: Configure interfaces using J2 template vyos
+      vyos.vyos.vyos_config:
+        src: "{{playbook_dir}}/../templates/vyos/interfaces.j2"
+      when: ansible_network_os == "vyos.vyos.vyos"
