@@ -1,0 +1,5 @@
+---
+- name: Configuratoin of the interfaces on vyos
+  vyos.vyos.vyos_l3_interfaces:
+    config: "{{interfaces}}"
+    state: replaced

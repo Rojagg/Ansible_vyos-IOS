@@ -1,0 +1,8 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for interfaces
+- include_tasks: vyos.yml
+  when: ansible_network_os == "vyos.vyos.vyos"
+
+- include_tasks: cisco.yml
+  when: ansible_network_os == "cisco.ios.ios"
