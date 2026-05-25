@@ -1,3 +1,4 @@
+set protocols ospf parameters router-id {{interfaces.Loopback[0].ipv4}}
 {% for entry in ospf.networks %}
 set protocols ospf area {{entry.area}} network {{entry.prefix}}/{{entry.mask}}
 {% endfor %}  

@@ -12,3 +12,4 @@
       vyos.vyos.vyos_config:
         src: "{{playbook_dir}}/../templates/vyos/ospf.j2"
       when: ansible_network_os == "vyos.vyos.vyos"
+

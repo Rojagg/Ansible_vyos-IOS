@@ -4,17 +4,17 @@ ansible_ssh_private_key_file: "{{ playbook_dir }}/../.ssh/vyos"
 interfaces:
   ethernet:
     - name: eth0
-      ipv4: 10.0.34.2
-      mask: 24
-      enable: true
-
-    - name: eth1
       ipv4: 10.0.13.1
       mask: 24
       enable: true
 
+    - name: eth1
+      ipv4: 10.0.34.2
+      mask: 24
+      enable: true
+
   Loopback:
-    - ipv4: 10.0.0.2
+    - ipv4: 10.0.0.3
       mask: 32
 
 
@@ -25,6 +25,6 @@ ospf:
       mask: 24
       area: 0
 
-    - prefix: 10.0.24.0
+    - prefix: 10.0.13.0
       mask: 24
       area: 0
