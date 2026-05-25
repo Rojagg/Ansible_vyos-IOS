@@ -14,14 +14,14 @@ interfaces:
       ipv4: 
         - address: 10.0.0.3/32
 
-
-ospf:
-  process_id: 1
-  networks:
-    - prefix: 10.0.34.0
-      mask: 24
-      area: 0
-
-    - prefix: 10.0.13.0
-      mask: 24
-      area: 0
+OSPF:
+  parameters:
+    router_id: 10.0.0.3
+  passive_interface:
+    - lo
+  areas:
+    - area_id: 0
+      network:
+        - address: 10.0.13.0/24
+        - address: 10.0.34.0/24
+     

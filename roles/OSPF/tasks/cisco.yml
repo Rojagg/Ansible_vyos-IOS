@@ -1,0 +1,10 @@
+---
+- name: Configure OSPF IOS
+  cisco.ios.ios_ospfv2:
+    config: "{{OSPF}}"
+    state: merged
+  register: result
+
+- name: asodikhabsodjh
+  debug:
+    var: result.commands

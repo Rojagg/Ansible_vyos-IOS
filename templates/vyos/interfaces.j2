@@ -1,7 +1,0 @@
-{% for interface in interfaces.ethernet %}
-set interfaces ethernet {{interface.name}} address {{interface.ipv4}}/{{interface.mask}}
-{% endfor %}
-
-{% for lo in interfaces.Loopback %}
-set interfaces loopback lo address {{lo.ipv4}}/{{lo.mask}}
-{% endfor %}

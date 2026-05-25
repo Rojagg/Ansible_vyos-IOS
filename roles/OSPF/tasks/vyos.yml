@@ -1,0 +1,4 @@
+- name: Configure OSPF on the VyOS
+  vyos.vyos.vyos_ospfv2:
+    config: "{{OSPF}}"
+    state: replaced
